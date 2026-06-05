@@ -1,0 +1,23 @@
+.delete-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,0.6); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1100; padding: 16px;
+  animation: fadeIn 0.2s ease;
+}
+.delete-dialog {
+  background: #fff; border-radius: 20px;
+  width: 100%; max-width: 400px; padding: 32px; text-align: center;
+}
+.delete-icon { font-size: 48px; margin-bottom: 12px; }
+.delete-dialog h3 { font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+.delete-dialog p { font-size: 14px; color: #64748b; margin-bottom: 24px; }
+.delete-actions { display: flex; gap: 12px; }
+.btn-cancel, .btn-confirm {
+  flex: 1; padding: 12px; border-radius: 10px;
+  font-size: 14px; font-weight: 600; cursor: pointer; border: none;
+}
+.btn-cancel { background: #f1f5f9; color: #475569; }
+.btn-confirm { background: #dc2626; color: #fff; }
+.btn-confirm:hover { background: #b91c1c; }
+@media (max-width: 480px) { .delete-actions { flex-direction: column; } }

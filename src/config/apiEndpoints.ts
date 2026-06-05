@@ -1,0 +1,76 @@
+const API_BASE_URL = 'https://customlogicinnovation.com/rudrabannataxiservices/api';
+export const API_ENDPOINTS = {
+ ADMIN: {
+    BASE: `${API_BASE_URL}/admins`,
+    LOGIN: `${API_BASE_URL}/admins/login`,
+    LOGOUT: (id: number) => `${API_BASE_URL}/admins/${id}/logout`,
+    VALIDATE_SESSION: `${API_BASE_URL}/admins/validate-session`,
+    CHECK_USERNAME: (username: string) => `${API_BASE_URL}/admins/check-username?username=${encodeURIComponent(username)}`,
+    COUNT: `${API_BASE_URL}/admins/count`,
+    BY_ID: (id: number) => `${API_BASE_URL}/admins/${id}`,
+  },
+  CARS: {
+    BASE: `${API_BASE_URL}/cars`,
+    BY_ID: (id: number) => `${API_BASE_URL}/cars/${id}`,
+    BY_SLUG: (slug: string) => `${API_BASE_URL}/cars/slug/${slug}`,
+    FILTER: `${API_BASE_URL}/cars/filter`,
+    FEATURED: `${API_BASE_URL}/cars/featured`,
+    BY_TYPE: (typeId: number) => `${API_BASE_URL}/cars/type/${typeId}`,
+    SEARCH: `${API_BASE_URL}/cars/search`,
+    PRICE_RANGE: `${API_BASE_URL}/cars/price-range`,
+    COUNT: `${API_BASE_URL}/cars/count`,
+    WITH_IMAGE: `${API_BASE_URL}/cars/with-image`,
+    UPDATE_WITH_IMAGE: (id: number) => `${API_BASE_URL}/cars/${id}/with-image`, 
+    TOGGLE_STATUS: (id: number) => `${API_BASE_URL}/cars/${id}/toggle-status`,
+    SET_STATUS: (id: number) => `${API_BASE_URL}/cars/${id}/status`,
+    ACTIVE_CARS: `${API_BASE_URL}/cars/active`,
+  },
+  BOOKINGS: {
+    BASE: `${API_BASE_URL}/bookings`,
+    BY_ID: (id: number) => `${API_BASE_URL}/bookings/${id}`,
+    BY_NUMBER: (number: string) => `${API_BASE_URL}/bookings/number/${number}`,
+    FILTER: `${API_BASE_URL}/bookings/filter`,
+    SEARCH: `${API_BASE_URL}/bookings/search`,
+    BY_CAR: (carId: number) => `${API_BASE_URL}/bookings/car/${carId}`,
+    BY_DATE: (date: string) => `${API_BASE_URL}/bookings/date/${date}`,
+    DATE_RANGE: `${API_BASE_URL}/bookings/date-range`,
+    RECENT: (limit: number = 5) => `${API_BASE_URL}/bookings/recent?limit=${limit}`,
+    COUNT: `${API_BASE_URL}/bookings/count`,
+    COUNT_BY_DATE: (date: string) => `${API_BASE_URL}/bookings/count/${date}`,
+  },
+  CAR_TYPES: {
+    BASE: `${API_BASE_URL}/car-types`,
+    BY_ID: (id: number) => `${API_BASE_URL}/car-types/${id}`,
+    BY_SLUG: (slug: string) => `${API_BASE_URL}/car-types/slug/${slug}`,
+    ACTIVE: `${API_BASE_URL}/car-types/active`,
+    TOGGLE_STATUS: (id: number) => `${API_BASE_URL}/car-types/${id}/toggle-status`,
+    CHECK_SLUG: (slug: string) => `${API_BASE_URL}/car-types/check-slug?slug=${slug}`,
+    COUNT: `${API_BASE_URL}/car-types/count`,
+    WITH_CAR_COUNT: `${API_BASE_URL}/car-types/with-car-count`,
+  },
+  CONTACTS: {
+    BASE: `${API_BASE_URL}/contacts`,
+    BY_ID: (id: number) => `${API_BASE_URL}/contacts/${id}`,
+    FILTER: `${API_BASE_URL}/contacts/filter`,
+    SEARCH: `${API_BASE_URL}/contacts/search`,
+    RECENT: (limit?: number) => `${API_BASE_URL}/contacts/recent`,  
+    COUNT: `${API_BASE_URL}/contacts/count`,
+  },
+
+
+   GALLERY: {
+    BASE: `${API_BASE_URL}/gallery`,
+    BY_ID: (id: number) => `${API_BASE_URL}/gallery/${id}`,
+    UPLOAD: `${API_BASE_URL}/gallery/upload`,
+    UPLOAD_MULTIPLE: `${API_BASE_URL}/gallery/upload/multiple`,
+    UPDATE_WITH_IMAGE: (id: number) => `${API_BASE_URL}/gallery/${id}/with-image`,
+    BULK_DELETE: `${API_BASE_URL}/gallery/bulk-delete`,
+    ACTIVE: `${API_BASE_URL}/gallery/active`,
+    INACTIVE: `${API_BASE_URL}/gallery/inactive`,
+    SEARCH: `${API_BASE_URL}/gallery/search`,
+    COUNT: `${API_BASE_URL}/gallery/count`,
+    TOGGLE_STATUS: (id: number) => `${API_BASE_URL}/gallery/${id}/toggle-status`,
+  }
+}; 
+
+export default API_ENDPOINTS;
